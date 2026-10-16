@@ -1,0 +1,258 @@
+/* Common CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text: #52616b;
+    --muted: #9aa7b2;
+    --blue: #00aaff;
+    --blue-dark: #008ed6;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: #fff;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    min-height: 76px;
+    padding: 18px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: #fff;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.logo {
+    flex: 0 0 22%;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(12px, 2vw, 28px);
+    flex: 1;
+}
+
+.nav-link a {
+    color: #657786;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.nav-link a:hover {
+    color: var(--blue);
+}
+
+.username {
+    flex: 0 0 auto;
+    padding: 12px 14px;
+    border-radius: 10px;
+    color: var(--blue);
+    background: #e8f7ff;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    min-height: calc(100vh - 76px);
+    padding: 48px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.hero-content,
+.hero-image {
+    min-width: 0;
+    flex: 1 1 50%;
+}
+
+.hero-content h1 {
+    margin-bottom: 10px;
+    color: var(--text);
+    font-size: clamp(28px, 2.5vw, 36px);
+    line-height: 1.25;
+}
+
+.hero-content h1 span {
+    color: var(--blue);
+}
+
+.hero-content p {
+    max-width: 470px;
+    margin-bottom: 25px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.hero-content button {
+    padding: 16px 30px;
+    border: none;
+    border-radius: 13px;
+    background: linear-gradient(to right, var(--blue), #31b5f7);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero-content button:hover {
+    background: var(--blue-dark);
+}
+
+.hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Tablet View */
+@media (min-width: 600px) and (max-width: 900px) {
+    .navbar {
+        min-height: 64px;
+        padding: 14px 5%;
+        gap: 12px;
+    }
+
+    .logo {
+        flex-basis: 17%;
+        font-size: 19px;
+    }
+
+    .nav-link {
+        gap: 12px;
+    }
+
+    .nav-link a {
+        font-size: 11px;
+    }
+
+    .username {
+        padding: 9px 10px;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: calc(100vh - 64px);
+        padding: 36px 6%;
+        gap: 18px;
+    }
+
+    .hero-content {
+        flex-basis: 54%;
+    }
+
+    .hero-image {
+        flex-basis: 46%;
+    }
+
+    .hero-content h1 {
+        font-size: 25px;
+        line-height: 1.25;
+    }
+
+    .hero-content p {
+        font-size: 12px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .hero-content button {
+        padding: 13px 20px;
+        font-size: 12px;
+    }
+
+    .hero-image img {
+        max-width: 300px;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 599px) {
+    .navbar {
+        min-height: 64px;
+        padding: 12px 5%;
+        gap: 12px;
+    }
+
+    .logo {
+        flex: 1;
+        font-size: 20px;
+    }
+
+    /* Hide links on mobile */
+    .nav-link {
+        display: none;
+    }
+
+    .username {
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+
+    /* Stack text and image vertically */
+    .hero {
+        min-height: 0;
+        padding: 28px 6% 36px;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 18px;
+    }
+
+    .hero-content,
+    .hero-image {
+        width: 100%;
+        flex: none;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(25px, 7vw, 30px);
+        line-height: 1.2;
+        margin-bottom: 9px;
+    }
+
+    .hero-content p {
+        max-width: 100%;
+        margin-bottom: 18px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .hero-content button {
+        padding: 13px 21px;
+        font-size: 12px;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 300px;
+        max-height: 300px;
+    }
+}
